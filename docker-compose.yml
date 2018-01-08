@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    image: web
+    build:
+      context: .
+      dockerfile: Demo.Web/Dockerfile
+    depends_on:
+      - "db"
+  db:
+    image: db
+    build:
+      context: .
+      dockerfile: Demo.Database/Dockerfile
